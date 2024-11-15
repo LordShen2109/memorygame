@@ -18,19 +18,61 @@ h1{
     top: 100px;
     
 }
-#one,#two,#three,#four,#five,#six,#seven,#eight{
-    background-color: #9b297b;
-    height: 190px;
+
+.card {
     width: 140px;
-    border: 5px solid #F3C623;
-    border-radius: 10px;
-    opacity: 0.7;
+    height: 190px;
+    perspective: 1000px; /* Enables 3D effect */
     cursor: pointer;
+    opacity: 0.7;
 }
-#one:hover,#two:hover,#three:hover,#four:hover,#five:hover,#six:hover,#seven:hover,#eight:hover{
+.card:hover{
     opacity: 1;
-    height: 210px;
     width: 160px;
+    height: 210px;
     transition: 0.8s;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back side when flipped */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.card-front {
+    background-color: #9b297b;
+    border:5px solid #F3C623 ;
+}
+
+.card-back {
+    /* background-color: #023e8a; */
+    transform: rotateY(180deg); /* Initially flipped */
+}
+
+.card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Flipped state */
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
 }
 
