@@ -10,69 +10,27 @@ h1{
     grid-template-columns: repeat(4,110px);
     grid-template-rows: repeat(2, 110px);
     gap: 50px;
-    row-gap: 100px;
-    column-gap: 100px;
+    row-gap: 170px;
+    column-gap: 120px;
     justify-content: center;
     align-items: center;
     position: relative;
     top: 100px;
     
 }
-#one{
+#one,#two,#three,#four,#five,#six,#seven,#eight{
     background-color: #9b297b;
-    height: 170px;
+    height: 190px;
     width: 140px;
     border: 5px solid #F3C623;
     border-radius: 10px;
+    opacity: 0.7;
+    cursor: pointer;
 }
-#two{
-    background-color: #9b297b;
-    height: 170px;
-    width: 140px;
-    border: 5px solid #F3C623;
-    border-radius: 10px;
+#one:hover,#two:hover,#three:hover,#four:hover,#five:hover,#six:hover,#seven:hover,#eight:hover{
+    opacity: 1;
+    height: 210px;
+    width: 160px;
+    transition: 0.8s;
 }
-#three{
-    background-color: #9b297b;
-    height: 170px;
-    width: 140px;
-    border: 5px solid #F3C623;
-    border-radius: 10px;
-}
-#four{
-    background-color: #9b297b;
-    height: 170px;
-    width: 140px;
-    border: 5px solid #F3C623;
-    border-radius: 10px;
-}
-#five{
-    background-color: #9b297b;
-    height: 170px;
-    width: 140px;
-    border: 5px solid #F3C623;
-    border-radius: 10px;
-}
-#six{
-    background-color: #9b297b;
-    height: 170px;
-    width: 140px;
-    border: 5px solid #F3C623;
-    border-radius: 10px;
-}
-#seven{
-    background-color:#9b297b;
-    height: 170px;
-    width: 140px;
-    border: 5px solid #F3C623;
-    border-radius: 10px;
-}
-#eight{
-    background-color: #9b297b;
-    height: 170px;
-    width: 140px;
-    border: 5px solid #F3C623;
-    border-radius: 10px;
-}
-
 
