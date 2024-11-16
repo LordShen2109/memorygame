@@ -39,7 +39,7 @@ h1{
 .card:hover h2{
     color: #F3C623;
     transition: 0.8s;
-    font-size: 28px;
+    font-size: 27px;
 }
 
 .card-inner {
