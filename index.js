@@ -1,7 +1,5 @@
-$(document).ready(function () {
-    const card = $('.card');
-
-    card.on('click', function () {
-        $(this).toggleClass('flipped');
-    });
+$(document).ready(function() {
+  $(".card").click(function() {
+    $(this).toggleClass("flipped");
+  });
 });
