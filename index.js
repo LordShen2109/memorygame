@@ -24,8 +24,8 @@ $(document).ready(function () {
       if (img1 === img2) {
         // Match: Fade out cards by toggling opacity
         setTimeout(() => {
-          card1.css("transition", "opacity 0.5s").css("opacity", "0");
-          card2.css("transition", "opacity 0.5s").css("opacity", "0");
+          card1.css("transition", "opacity 1.5s").css("opacity", "0");
+          card2.css("transition", "opacity 1.5s").css("opacity", "0");
           setTimeout(() => {
             card1.css("visibility", "hidden");
             card2.css("visibility", "hidden");
