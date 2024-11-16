@@ -22,11 +22,15 @@ $(document).ready(function () {
 
       // Check if the images match
       if (img1 === img2) {
-        // Match: Remove both cards after a short delay
+        // Match: Fade out cards by toggling opacity
         setTimeout(() => {
-          card1.css("visibility", "hidden");
-          card2.css("visibility", "hidden");
-          flippedCards = [];
+          card1.css("transition", "opacity 0.5s").css("opacity", "0");
+          card2.css("transition", "opacity 0.5s").css("opacity", "0");
+          setTimeout(() => {
+            card1.css("visibility", "hidden");
+            card2.css("visibility", "hidden");
+            flippedCards = [];
+          }, 500); // Delay to allow fade-out animation to complete
         }, 500);
       } else {
         // No Match: Flip both cards back after a short delay
