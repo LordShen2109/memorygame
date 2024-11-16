@@ -1,8 +1,8 @@
 $(document).ready(function () {
-  let flippedCards = []; // Store flipped cards
+  let flippedCards = []; // Store the currently flipped cards
 
   $(".card").click(function () {
-    // Prevent flipping more than 2 cards or re-flipping the same card
+    // Prevent flipping more than two cards or re-flipping the same card
     if ($(this).hasClass("flipped") || flippedCards.length >= 2) {
       return;
     }
@@ -11,16 +11,31 @@ $(document).ready(function () {
     $(this).addClass("flipped");
     flippedCards.push($(this));
 
+    // Check if two cards are flipped
     if (flippedCards.length === 2) {
-      // Get the image source of the flipped cards
       const card1 = flippedCards[0];
       const card2 = flippedCards[1];
+
+      // Get the image source of both cards
       const img1 = card1.find(".card-back img").attr("src");
       const img2 = card2.find(".card-back img").attr("src");
 
       // Check if the images match
       if (img1 === img2) {
-        // Match: Hide cards after a short delay
+        // Match: Remove both cards after a short delay
         setTimeout(() => {
-          card1.addClass("hidden");
-          car
+          card1.css("visibility", "hidden");
+          card2.css("visibility", "hidden");
+          flippedCards = [];
+        }, 500);
+      } else {
+        // No Match: Flip both cards back after a short delay
+        setTimeout(() => {
+          card1.removeClass("flipped");
+          card2.removeClass("flipped");
+          flippedCards = [];
+        }, 1000);
+      }
+    }
+  });
+});
