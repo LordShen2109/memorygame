@@ -24,12 +24,20 @@ h1{
     height: 190px;
     perspective: 1000px; /* Enables 3D effect */
     cursor: pointer;
-    opacity: 0.9;
+    opacity: 0.8;
+    /* box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px; */
+    
 }
 .card:hover{
     opacity: 1;
-    width: 160px;
-    height: 210px;
+    width: 165px;
+    height: 215px;
+    transition: 0.8s;
+    /* box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px; */
+    
+}
+.card:hover h2{
+    color: #F3C623;
     transition: 0.8s;
 }
 
@@ -84,5 +92,15 @@ h1{
     -webkit-background-clip: text;
     color: transparent; /*Makes the text transparent so gradient shows */
     font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+}
+
+
+.card1{
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+.card2{
+    box-shadow: none;
 }
 
