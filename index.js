@@ -1,35 +1,26 @@
-$(document).ready(function() {
-  let flippedCards = [];
+$(document).ready(function () {
+  let flippedCards = []; // Store flipped cards
 
-  $(".card").click(function() {
+  $(".card").click(function () {
+    // Prevent flipping more than 2 cards or re-flipping the same card
     if ($(this).hasClass("flipped") || flippedCards.length >= 2) {
-      return; // Prevent flipping more than two cards or flipping an already flipped card
+      return;
     }
 
+    // Flip the card
     $(this).addClass("flipped");
     flippedCards.push($(this));
 
     if (flippedCards.length === 2) {
-      // Check if the two flipped cards match
+      // Get the image source of the flipped cards
       const card1 = flippedCards[0];
       const card2 = flippedCards[1];
+      const img1 = card1.find(".card-back img").attr("src");
+      const img2 = card2.find(".card-back img").attr("src");
 
-      if (card1.data("match") === card2.data("match")) {
-        // Cards match: hide them
+      // Check if the images match
+      if (img1 === img2) {
+        // Match: Hide cards after a short delay
         setTimeout(() => {
           card1.addClass("hidden");
-          card2.addClass("hidden");
-          flippedCards = [];
-        }, 500); // Allow the flip animation to complete
-      } else {
-        // Cards do not match: flip them back
-        setTimeout(() => {
-          card1.removeClass("flipped");
-          card2.removeClass("flipped");
-          flippedCards = [];
-        }, 1000); // Allow the user to see the unmatched cards briefly
-      }
-    }
-  });
-});
-
+          car
