@@ -30,8 +30,8 @@ $(document).ready(function () {
             card1.css("visibility", "hidden");
             card2.css("visibility", "hidden");
             flippedCards = [];
-          }, 500); // Delay to allow fade-out animation to complete
-        }, 500);
+          }, 1200); // Delay to allow fade-out animation to complete
+        }, 700);
       } else {
         // No Match: Flip both cards back after a short delay
         setTimeout(() => {
