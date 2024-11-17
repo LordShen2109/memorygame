@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  
   // Shuffle the cards when the page loads
   shuffleCards();
 
