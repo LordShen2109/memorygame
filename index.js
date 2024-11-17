@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  // Shuffle the cards when the page loads
+  shuffleCards();
+
   let flippedCards = []; // Store the currently flipped cards
 
   $(".card").click(function () {
@@ -16,13 +19,10 @@ $(document).ready(function () {
       const card1 = flippedCards[0];
       const card2 = flippedCards[1];
 
-      // Get the image source of both cards
       const img1 = card1.find(".card-back img").attr("src");
       const img2 = card2.find(".card-back img").attr("src");
 
-      // Check if the images match
       if (img1 === img2) {
-        // Match: Fade out cards by toggling opacity
         setTimeout(() => {
           card1.css("transition", "opacity 1.5s").css("opacity", "0");
           card2.css("transition", "opacity 1.5s").css("opacity", "0");
@@ -30,10 +30,9 @@ $(document).ready(function () {
             card1.css("visibility", "hidden");
             card2.css("visibility", "hidden");
             flippedCards = [];
-          }, 1200); // Delay to allow fade-out animation to complete
+          }, 1200);
         }, 700);
       } else {
-        // No Match: Flip both cards back after a short delay
         setTimeout(() => {
           card1.removeClass("flipped");
           card2.removeClass("flipped");
@@ -43,3 +42,22 @@ $(document).ready(function () {
     }
   });
 });
+
+// Function to shuffle the cards
+function shuffleCards() {
+  const container = $(".container"); // The parent container of the cards
+  const cards = $(".card"); // Select all the cards
+
+  // Use an array to store the card elements
+  const cardArray = cards.toArray();
+
+  // Fisher-Yates Shuffle Algorithm
+  for (let i = cardArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cardArray[i], cardArray[j]] = [cardArray[j], cardArray[i]];
+  }
+
+  // Append the shuffled cards back to the container
+  container.empty();
+  cardArray.forEach(card => container.append(card));
+}
