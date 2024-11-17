@@ -9,7 +9,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 110px);
     grid-template-rows: repeat(2, 110px);
-    gap: 120px 130px;
+    gap: 150px 130px;
     justify-content: center;
     align-items: center;
     position: relative;
