@@ -9,7 +9,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 110px);
     grid-template-rows: repeat(2, 110px);
-    gap: 120px 120px; /* Keeping the original gaps */
+    gap: 120px 130px;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -28,7 +28,7 @@ body {
 
 .card:hover {
     opacity: 1;
-    transform: scale(1.15); /* Smooth scaling for hover effect */
+    transform: scale(1.15);
 }
 
 .card-inner {
@@ -72,6 +72,18 @@ body {
 
 .card.flipped .card-inner {
     transform: rotateY(180deg);
+}
+
+/* Styling for the h2 element */
+.card h2 {
+    font-family: 'Doto', sans-serif; /* Ensure Doto font is applied */
+    color: #fff;
+    transition: color 0.4s ease;
+    text-align: center;
+}
+
+.card:hover h2 {
+    color: #F3C623; /* Color change on hover */
 }
 
 h1 {
