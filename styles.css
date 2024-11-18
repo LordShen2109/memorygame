@@ -9,7 +9,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 110px);
     grid-template-rows: repeat(2, 110px);
-    gap: 150px 130px;
+    gap: 130px;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -97,3 +97,73 @@ h1 {
     color: transparent;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+@media (max-width: 479px) {
+    .container{
+        grid-template-columns: repeat(2, 110px);
+        grid-template-rows: repeat(4, 110px);
+    }
+
+    h1 {
+      font-size: 24px; /* Adjust heading size */
+      text-align: center;
+    }
+  
+    .card {
+      height: 80px;
+    }
+  
+    .card-container {
+      gap: 12px; /* Smaller gap between cards */
+    }
+  }
+  @media (min-width: 480px) and (max-width: 767px) {
+    .container{
+        grid-template-columns: repeat(2, 110px);
+        grid-template-rows: repeat(4, 110px);
+    }
+    h1 {
+      font-size: 28px; /* Slightly larger heading */
+      text-align: center;
+    }
+  
+    .card {
+      height: 100px;
+    }
+  
+    .card-container {
+      gap: 16px; /* Moderate gap for better separation */
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .container{
+        grid-template-columns: repeat(2, 110px);
+        grid-template-rows: repeat(4, 110px);
+    }
+    h1 {
+      font-size: 36px;
+    }
+  
+    .card {
+        height: 120px;
+    }
+  
+    .card-container {
+      gap: 24px; /* Increase gap for better spacing */
+    }
+  }
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    h1 {
+      font-size: 50px;
+    }
+  
+    .card {
+      height: 140px; /* Three cards per row */
+      
+    }
+  
+    .card-container {
+      gap: 32px; /* Increase gap for a cleaner look */
+    }
+  }
+
+          
