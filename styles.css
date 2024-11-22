@@ -23,6 +23,7 @@ body {
   cursor: pointer;
   opacity: 0.9;
   transition: transform 0.4s ease, opacity 0.4s ease;
+  will-change: transform;
 }
 
 .card:hover {
