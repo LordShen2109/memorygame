@@ -36,7 +36,6 @@ body {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
-  will-change: transform;
 }
 
 .card-front, .card-back {
@@ -50,7 +49,6 @@ body {
   font-size: 15px;
   color: #fff;
   border-radius: 10px;
-  will-change: transform;
 }
 
 .card-front {
