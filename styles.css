@@ -22,8 +22,7 @@ body {
   perspective: 1000px;
   cursor: pointer;
   opacity: 0.9;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  will-change: transform, opacity;
+  transition: transform 0.4s, opacity 0.4s;
 }
 
 .card:hover {
