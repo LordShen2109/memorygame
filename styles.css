@@ -16,6 +16,7 @@ body {
   align-items: center;
   position: relative;
   top: 80px;
+  right: 22px;
 }
 
 /* Card Styling */
@@ -101,7 +102,7 @@ h1 {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   display: inline-block;
   position: relative;
-  left: 530px;
+  left: 515px;
 
 }
 
@@ -109,14 +110,14 @@ h1 {
 .tries-container {
   position: relative;
   right: 470px;
-  bottom: 16px;
+  bottom: 8px;
   text-align: center;
   font-family: 'Lilita One', cursive; /* Keeping the previous font family */
-  font-size: 24px;
+  font-size: 21px;
   font-weight: bold;
   color: #fff;
   /* margin-top: 20px; */
-  padding: 10px;
+  padding: 8px;
   border: 2px solid #FFD700;
   border-radius: 12px;
   background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
@@ -200,27 +201,26 @@ h1 {
   } */
   @media (min-width: 1024px) and (max-width: 1280px) {
     h1 {
-      font-size: 50px;
+      font-size: 60px;
       left: 0px;
-      left: 450px;
+      left: 420px;
     }
 
     .card {
       height: 140px;
-
     }
 
     .container {
       gap:100px;
       top: 50px;
-      right: 23px;
+      right: 18px;
     }
     .tries-container{
       right: 0px;
       bottom: 0px;
-      right: 370px;
+      right: 420px;
       bottom: 5px;
-      font-size: 20px;
-      padding: 8px;
+      font-size: 19px;
+      padding: 7px;
     }
   }
