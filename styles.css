@@ -109,13 +109,16 @@ h1 {
 /* Tries Counter Styling */
 .tries-container {
   position: relative;
-  right: 470px;
+  right: 490px;
   bottom: 8px;
   text-align: center;
   font-family: 'Lilita One', cursive; /* Keeping the previous font family */
-  font-size: 21px;
+  font-size: 23px;
+  letter-spacing: 2px;
   font-weight: bold;
-  color: #fff;
+  color: azure;
+  opacity: 0.8;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   /* margin-top: 20px; */
   padding: 8px;
   border: 2px solid #FFD700;
@@ -212,15 +215,16 @@ h1 {
 
     .container {
       gap:100px;
-      top: 50px;
+      top: 20px;
       right: 18px;
     }
     .tries-container{
       right: 0px;
       bottom: 0px;
-      right: 420px;
+      right: 430px;
       bottom: 5px;
       font-size: 19px;
       padding: 7px;
+      letter-spacing: 1px;
     }
   }
