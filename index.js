@@ -2,6 +2,8 @@ $(document).ready(function () {
     const maxTries = 4; // Maximum number of tries
     let triesLeft = maxTries; // Initialize tries left
     let flippedCards = []; // Store the currently flipped cards
+    let matchedPairs = 0; // Count of matched card pairs
+    const totalPairs = $(".card").length / 2; // Total pairs in the game
 
     // Display the initial tries left
     $("#tries").text(triesLeft);
@@ -9,7 +11,8 @@ $(document).ready(function () {
     // Shuffle the cards when the page loads
     shuffleCards();
 
-    $(".card").click(function () {
+    // Delegate the click event to the container
+    $(".container").on("click", ".card", function () {
         // Prevent flipping more than two cards or re-flipping the same card
         if ($(this).hasClass("flipped") || flippedCards.length >= 2) {
             return;
@@ -29,6 +32,7 @@ $(document).ready(function () {
 
             if (img1 === img2) {
                 // Cards match
+                matchedPairs++;
                 setTimeout(() => {
                     card1.css("transition", "opacity 1.5s").css("opacity", "0");
                     card2.css("transition", "opacity 1.5s").css("opacity", "0");
@@ -36,9 +40,7 @@ $(document).ready(function () {
                         card1.css("visibility", "hidden");
                         card2.css("visibility", "hidden");
                         flippedCards = [];
-                        triesLeft--; // Reduce tries for a successful match
-                        updateTriesDisplay();
-                        checkGameOver();
+                        checkWin(); // Check if the user has won
                     }, 1200);
                 }, 700);
             } else {
@@ -47,6 +49,9 @@ $(document).ready(function () {
                     card1.removeClass("flipped");
                     card2.removeClass("flipped");
                     flippedCards = [];
+                    triesLeft--; 
+                    updateTriesDisplay();
+                    checkGameOver();
                 }, 1000);
             }
         }
@@ -86,12 +91,19 @@ $(document).ready(function () {
         }
     }
 
+    // Function to check if the user has won
+    function checkWin() {
+        if (matchedPairs === totalPairs) {
+            setTimeout(() => {
+                alert("You Win! Congratulations!");
+                resetGame();
+            }, 500);
+        }
+    }
+
     // Function to reset the game
     function resetGame() {
-        triesLeft = maxTries;
-        updateTriesDisplay();
-        flippedCards = [];
-        $(".card").removeClass("flipped").css("opacity", "1").css("visibility", "visible");
-        shuffleCards();
+        // Reload the page to reset the game
+        location.reload();
     }
 });

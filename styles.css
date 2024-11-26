@@ -1,206 +1,226 @@
 /* General Styling */
 body {
-    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 /* Game Container */
 .container {
-    display: grid;
-    grid-template-columns: repeat(4, 110px);
-    grid-template-rows: repeat(2, 110px);
-    gap: 130px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 110px);
+  grid-template-rows: repeat(2, 110px);
+  gap: 130px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 80px;
 }
 
 /* Card Styling */
 .card {
-    width: 140px;
-    height: 190px;
-    perspective: 1000px;
-    cursor: pointer;
-    opacity: 0.9;
-    transition: transform 0.4s, opacity 0.4s;
+  width: 140px;
+  height: 190px;
+  perspective: 1000px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: transform 0.4s, opacity 0.4s;
 }
 
 .card:hover {
-    opacity: 1;
-    transform: scale(1.15);
+  opacity: 1;
+  transform: scale(1.15);
 }
 
 .card-inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease;
-    will-change: transform;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  will-change: transform;
 }
 
 .card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    color: #fff;
-    border-radius: 10px;
-    will-change: transform;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 10px;
+  will-change: transform;
 }
 
 .card-front {
-    background-color: #9b297b;
-    border: 5px solid #F3C623;
+  background-color: #9b297b;
+  border: 5px solid #F3C623;
 }
 
 .card-back {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .card-back img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .card.flipped .card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 /* Styling for the text on the front of the card */
 .card h2 {
-    font-family: 'Doto', sans-serif; /* Ensure Doto font is applied */
-    color: #fff;
-    transition: color 0.4s ease;
-    text-align: center;
-  }
+  font-family: 'Doto', sans-serif; /* Ensure Doto font is applied */
+  color: #fff;
+  transition: color 0.4s ease;
+  text-align: center;
+}
 
 .card:hover h2 {
-    color: #F3C623;
+  color: #F3C623;
 }
 
 /* Header Styling */
 h1 {
-    font-family: 'Lilita One', cursive;
-    text-align: center;
-    font-size: 70px;
-    letter-spacing: 4px;
-    word-spacing: 30px;
-    background: linear-gradient(45deg, #00BFFF, #FF00FF, #FFD700);
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: 'Lilita One', cursive;
+  text-align: center;
+  font-size: 70px;
+  letter-spacing: 4px;
+  word-spacing: 30px;
+  background: linear-gradient(45deg, #00BFFF, #FF00FF, #FFD700);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  position: relative;
+  left: 530px;
+
 }
 
 /* Tries Counter Styling */
 .tries-container {
-    text-align: center;
-    font-family: 'Lilita One', cursive; /* Keeping the previous font family */
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    margin-top: 20px;
-    padding: 10px;
-    border: 2px solid #FFD700;
-    border-radius: 12px;
-    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-    display: inline-block;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  right: 470px;
+  bottom: 16px;
+  text-align: center;
+  font-family: 'Lilita One', cursive; /* Keeping the previous font family */
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  /* margin-top: 20px; */
+  padding: 10px;
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 .tries-container span {
-    color: #FFD700;
-    font-size: 28px;
+  color: #FFD700;
+  font-size: 28px;
 }
+
 
 /* Responsive Design */
-@media (max-width: 479px) {
-    .container {
+/* @media (max-width: 479px) {
+  .container {
+      grid-template-columns: repeat(2, 110px);
+      grid-template-rows: repeat(4, 110px);
+      gap: 45px ;
+      position: relative;
+      right: 18px;
+  }
+
+  h1 {
+      font-size: 40px;
+      text-align: center;
+  }
+
+  .card {
+      height: 90px;
+  }
+  .card:hover{
+    transform: scale(1);
+  }
+
+  .tries-container {
+      font-size: 18px;
+      padding: 8px;
+      position: relative;
+      top:0px;
+  }
+} */
+
+/* @media (min-: 480px) and (max-width: 767px) {
+    .container{
         grid-template-columns: repeat(2, 110px);
         grid-template-rows: repeat(4, 110px);
-        gap: 50px;
     }
-
     h1 {
-        font-size: 40px;
-        text-align: center;
+      font-size: 28px; 
+      text-align: center;
     }
 
     .card {
-        height: 110px;
+      height: 100px;
+    }
+    .container{
+      gap:70px
     }
 
-    .tries-container {
-        font-size: 18px;
-        padding: 8px;
-    }
-}
 
-@media (min-width: 480px) and (max-width: 767px) {
-    .container {
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .container{
         grid-template-columns: repeat(2, 110px);
         grid-template-rows: repeat(4, 110px);
-        gap: 70px;
     }
-
     h1 {
-        font-size: 28px;
-        text-align: center;
-    }
-
-    .card {
-        height: 100px;
-    }
-
-    .tries-container {
-        font-size: 20px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .container {
-        grid-template-columns: repeat(2, 110px);
-        grid-template-rows: repeat(4, 110px);
-        gap: 80px;
-    }
-
-    h1 {
-        font-size: 36px;
+      font-size: 36px;
     }
 
     .card {
         height: 120px;
     }
-
-    .tries-container {
-        font-size: 22px;
+    .container{
+      gap: 80px;
     }
-}
 
-@media (min-width: 1024px) and (max-width: 1280px) {
+
+  } */
+  @media (min-width: 1024px) and (max-width: 1280px) {
     h1 {
-        font-size: 50px;
+      font-size: 50px;
+      left: 0px;
+      left: 450px;
     }
 
     .card {
-        height: 140px;
+      height: 140px;
+
     }
 
     .container {
-        gap: 100px;
-        top: 30px;
+      gap:100px;
+      top: 50px;
+      right: 23px;
     }
-
-    .tries-container {
-        font-size: 24px;
+    .tries-container{
+      right: 0px;
+      bottom: 0px;
+      right: 370px;
+      bottom: 5px;
+      font-size: 20px;
+      padding: 8px;
     }
-}
+  }
