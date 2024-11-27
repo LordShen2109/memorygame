@@ -49,7 +49,7 @@ $(document).ready(function () {
                     card1.removeClass("flipped");
                     card2.removeClass("flipped");
                     flippedCards = [];
-                    triesLeft--; 
+                    triesLeft--;
                     updateTriesDisplay();
                     checkGameOver();
                 }, 1000);
@@ -85,8 +85,13 @@ $(document).ready(function () {
     function checkGameOver() {
         if (triesLeft <= 0) {
             setTimeout(() => {
-                alert("Game Over! No more tries left.");
-                resetGame();
+                // Hide all cards
+                $(".card").css({
+                    "transition": "opacity 1.5s",
+                    "opacity": "0",
+                    "visibility": "hidden"
+                });
+                displayMessage("You Lost! Try again later!");
             }, 500);
         }
     }
@@ -95,15 +100,29 @@ $(document).ready(function () {
     function checkWin() {
         if (matchedPairs === totalPairs) {
             setTimeout(() => {
-                alert("You Win! Congratulations!");
-                resetGame();
+                displayMessage("You Win! Congratulations!");
             }, 500);
         }
     }
 
-    // Function to reset the game
-    function resetGame() {
-        // Reload the page to reset the game
-        location.reload();
+    // Function to display the win or lose message
+    function displayMessage(message) {
+        $("h1").text(message).css({
+            "font-size": "80px",
+            "text-align": "center",
+            "margin-top": "20px",
+            "margin-left": "40px",
+            "margin-right": "40px",
+            "padding-right": "50px"
+        });
+
+        // Remove the tries display
+        $(".tries-container").remove();
+
+        // Disable further clicks on cards
+        $(".card").off("click");
     }
 });
+
+
+
