@@ -105,11 +105,18 @@ $(document).ready(function () {
                     $(".winlose").html('<span class="typed"></span>');
                 }
                 new Typed('.typed', {
-                    strings: ["Game Over! Better luck next time.^1000"],
+                    strings: ["Game Over! You Lose.^1000"],
                     typeSpeed: 60,
                     backSpeed: 60,
-                    loop: true,
+                    loop: false,
                 });
+    
+                // Ask user if they want to reload the page after 7 seconds
+                setTimeout(() => {
+                    if (confirm("Do you want to play again?")) {
+                        location.reload();
+                    }
+                }, 10000);
             }, 1000);
         }
     }
@@ -137,8 +144,15 @@ $(document).ready(function () {
                     strings: ["Congratulations! You Win!^1000"],
                     typeSpeed: 60,
                     backSpeed: 60,
-                    loop: true,
+                    loop: false,
                 });
+    
+                // Ask user if they want to reload the page after 7 seconds
+                setTimeout(() => {
+                    if (confirm("Do you want to play again?")) {
+                        location.reload();
+                    }
+                }, 10000);
             }, 500);
         }
     }
