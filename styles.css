@@ -1,12 +1,9 @@
-/* General Styling */
 body {
   background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-
-/* Game Container */
 .container {
   display: grid;
   grid-template-columns: repeat(4, 110px);
@@ -18,8 +15,6 @@ body {
   top: 80px;
   right: 22px;
 }
-
-/* Card Styling */
 .card {
   width: 140px;
   height: 190px;
@@ -76,20 +71,15 @@ body {
 .card.flipped .card-inner {
   transform: rotateY(180deg);
 }
-
-/* Styling for the text on the front of the card */
 .card h2 {
-  font-family: 'Doto', sans-serif; /* Ensure Doto font is applied */
+  font-family: 'Doto', sans-serif;
   color: #fff;
   transition: color 0.4s ease;
   text-align: center;
 }
-
 .card:hover h2 {
   color: #F3C623;
 }
-
-/* Header Styling */
 h1 {
   font-family: 'Lilita One', cursive;
   text-align: center;
@@ -105,35 +95,29 @@ h1 {
   left: 515px;
 
 }
-
-/* Tries Counter Styling */
 .tries-container {
   position: relative;
   right: 490px;
   bottom: 8px;
   text-align: center;
-  font-family: 'Lilita One', cursive; /* Keeping the previous font family */
+  font-family: 'Lilita One', cursive;
   font-size: 23px;
   letter-spacing: 2px;
   font-weight: bold;
   color: azure;
   opacity: 0.8;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* margin-top: 20px; */
   padding: 8px;
   border: 2px solid #FFD700;
   border-radius: 12px;
   background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
   display: inline-block;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
 }
-
 .tries-container span {
   color: #FFD700;
   font-size: 28px;
 }
-
 .winlose{
   height: 200px;
   width: 1000px;
@@ -153,39 +137,51 @@ h1 {
   visibility: visible;
   opacity: 0.8;
 }
-
-
-
-
 /* Responsive Design */
-/* @media (max-width: 479px) {
+@media (max-width: 479px) {
   .container {
       grid-template-columns: repeat(2, 110px);
       grid-template-rows: repeat(4, 110px);
-      gap: 45px ;
+      gap: 380px;
       position: relative;
-      right: 18px;
+      right:0;
+      top:0;
+      left: 315px;
+      top:110px;
   }
 
   h1 {
-      font-size: 40px;
+      font-size: 100px;
       text-align: center;
+      position: relative;
+      left: 0;
+      left: 450px;
   }
 
   .card {
-      height: 90px;
+      height:370px;
+      width: 350px;
+  }
+  .card-front,.card-back{
+    border-radius: 6%;
   }
   .card:hover{
     transform: scale(1);
   }
 
   .tries-container {
-      font-size: 18px;
-      padding: 8px;
+      font-size: 44px;
+      padding: 0;
       position: relative;
-      top:0px;
+      right: 0px;
+      bottom: 0;
+      left: 15px;
+      bottom: 260px;
   }
-} */
+  h2{
+    font-size: 60px;
+  }
+} 
 
 /* @media (min-: 480px) and (max-width: 767px) {
     .container{

@@ -4,25 +4,14 @@ $(document).ready(function () {
     let flippedCards = []; // Store the currently flipped cards
     let matchedPairs = 0; // Count of matched card pairs
     const totalPairs = $(".card").length / 2; // Total pairs in the game
-
-    // Display the initial tries left
     $("#tries").text(triesLeft);
-
-    // Shuffle the cards when the page loads
     shuffleCards();
-
-    // Delegate the click event to the container
     $(".container").on("click", ".card", function () {
-        // Prevent flipping more than two cards or re-flipping the same card
         if ($(this).hasClass("flipped") || flippedCards.length >= 2) {
             return;
         }
-
-        // Flip the card
         $(this).addClass("flipped");
         flippedCards.push($(this));
-
-        // Check if two cards are flipped
         if (flippedCards.length === 2) {
             const card1 = flippedCards[0];
             const card2 = flippedCards[1];
@@ -156,11 +145,4 @@ $(document).ready(function () {
             }, 500);
         }
     }
-    
-
-    // Function to reset the game
-    // function resetGame() {
-    //     // Reload the page to reset the game
-    //     location.reload();
-    // }
 });
