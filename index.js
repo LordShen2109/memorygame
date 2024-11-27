@@ -49,7 +49,7 @@ $(document).ready(function () {
                     card1.removeClass("flipped");
                     card2.removeClass("flipped");
                     flippedCards = [];
-                    triesLeft--;
+                    triesLeft--; 
                     updateTriesDisplay();
                     checkGameOver();
                 }, 1000);
@@ -85,44 +85,68 @@ $(document).ready(function () {
     function checkGameOver() {
         if (triesLeft <= 0) {
             setTimeout(() => {
-                // Hide all cards
+                // Apply smooth hiding transition to all cards
                 $(".card").css({
-                    "transition": "opacity 1.5s",
-                    "opacity": "0",
-                    "visibility": "hidden"
+                    transition: "opacity 0.5s ease, visibility 0.5s ease",
+                    opacity: "0",
+                    visibility: "hidden",
                 });
-                displayMessage("You Lost! Try again later!");
             }, 500);
+    
+            setTimeout(() => {
+                $(".winlose").css({
+                    transition: "opacity 0.5s ease, visibility 0.5s ease",
+                    opacity: "1",
+                    visibility: "visible",
+                });
+    
+                // Add Typed.js effect for the "Game Over" message
+                if ($('.typed').length === 0) {
+                    $(".winlose").html('<span class="typed"></span>');
+                }
+                new Typed('.typed', {
+                    strings: ["Game Over! Better luck next time.^1000"],
+                    typeSpeed: 60,
+                    backSpeed: 60,
+                    loop: true,
+                });
+            }, 1000);
         }
     }
-
-    // Function to check if the user has won
+    
     function checkWin() {
         if (matchedPairs === totalPairs) {
             setTimeout(() => {
-                displayMessage("You Win! Congratulations!");
+                // Apply smooth hiding transition to all cards
+                $(".card").css({
+                    transition: "opacity 0.5s ease, visibility 0.5s ease",
+                    opacity: "0",
+                    visibility: "hidden",
+                });
+            }, 500);
+    
+            setTimeout(() => {
+                $(".winlose").css({
+                    transition: "opacity 0.5s ease, visibility 0.5s ease",
+                    opacity: "1",
+                    visibility: "visible",
+                });
+    
+                // Add Typed.js effect for the "You Win" message
+                new Typed('.typed', {
+                    strings: ["Congratulations! You Win!^1000"],
+                    typeSpeed: 60,
+                    backSpeed: 60,
+                    loop: true,
+                });
             }, 500);
         }
     }
+    
 
-    // Function to display the win or lose message
-    function displayMessage(message) {
-        $("h1").text(message).css({
-            "font-size": "80px",
-            "text-align": "center",
-            "margin-top": "20px",
-            "margin-left": "40px",
-            "margin-right": "40px",
-            "padding-right": "50px"
-        });
-
-        // Remove the tries display
-        $(".tries-container").remove();
-
-        // Disable further clicks on cards
-        $(".card").off("click");
-    }
+    // Function to reset the game
+    // function resetGame() {
+    //     // Reload the page to reset the game
+    //     location.reload();
+    // }
 });
-
-
-
