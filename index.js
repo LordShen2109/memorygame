@@ -94,7 +94,7 @@ $(document).ready(function () {
                     $(".winlose").html('<span class="typed"></span>');
                 }
                 new Typed('.typed', {
-                    strings: ["Game Over! You Lose.^1000"],
+                    strings: ["Game Over! You Lost.^1000"],
                     typeSpeed: 60,
                     backSpeed: 60,
                     loop: false,
