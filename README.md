@@ -1,2 +1,1 @@
-# project
-memory card game
+# memory game
