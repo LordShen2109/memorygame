@@ -1,6 +1,18 @@
 $(document).ready(function() {
     // Cache DOM selectors for better performance
-
+    function initializeCards() {
+        console.log("Initializing cards..."); // For debugging
+        $('.card').each(function(index) {
+          const card = $(this);
+          setTimeout(function() {
+            card.addClass('initialized');
+            console.log("Card " + index + " initialized"); // For debugging
+          }, index * 100);
+        });
+      }
+      
+      // Call this function within your document.ready
+      initializeCards();
     $(".back-btn").click(function() {
         window.location.href = "/";  // Redirect back to start.html
     });
