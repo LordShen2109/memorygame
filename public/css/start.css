@@ -36,8 +36,8 @@ body {
 }
 
 .letter {
-    font-size: 4rem;
-    font-weight: 900;
+    font-size: 4.5rem;
+    font-weight: 1000;
     color: white;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     margin: 0 2px;
@@ -249,4 +249,31 @@ body {
     to {
         transform: rotate(360deg);
     }
+}
+@media (min-width: 480px) and (max-width: 767px){}
+@media (min-width: 992px) and (max-width: 1199px){}
+@media (min-width: 1200px) and (max-width: 1439px){
+  .letter{
+    font-size: 3rem;
+  }
+  .start-button{
+    height: 140px;
+    width: 140px;
+    margin-bottom: 0;
+  }
+  .difficulty-bar{
+    padding: 6px;
+  }
+  .instruction-text{
+    position: relative;
+    margin-top: 0;
+    bottom: 25px;
+  }
+  .title-word{
+    margin-bottom: 0;
+
+  }
+  .subtitle{
+    margin-top: 20px;
+  }
 }

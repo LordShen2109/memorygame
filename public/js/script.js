@@ -170,20 +170,26 @@ $(document).ready(function() {
     
             if (img1 === img2) {
                 matchedPairs++;
-    
+            
                 setTimeout(() => {
-                    // Add matched animation - batch DOM operations
-                    card1.addClass("matched matched-card");
-                    card2.addClass("matched matched-card");
+                    // Change how you add classes
+                    card1.addClass("matched");
+                    card2.addClass("matched");
+                    
+                    // Add a slight delay before adding the fade effect
+                    setTimeout(() => {
+                        card1.addClass("matched-card");
+                        card2.addClass("matched-card");
+                    }, 700); // Apply after the match pulse animation
                     
                     flippedCards = [];
                     checkWin();
                 }, 500);
             } else {
-                setTimeout(() => {
+
                     // Add shake animation
-                    card1.addClass("shake");
-                    card2.addClass("shake");
+                    // card1.addClass("shake");
+                    // card2.addClass("shake");
                     
                     setTimeout(() => {
                         // Batch DOM operations
@@ -198,8 +204,8 @@ $(document).ready(function() {
                         
                         updateTriesDisplay();
                         checkGameOver();
-                    }, 600);
-                }, 1000);
+                    }, 1000);
+                
             }
         }
     });
@@ -286,7 +292,7 @@ $(document).ready(function() {
         if (triesLeft <= 0) {
             setTimeout(() => {
                 $card.css({ 
-                    transition: "opacity 0.8s ease", 
+                    transition: "opacity 2.5s ease", 
                     opacity: "0", 
                     visibility: "hidden" 
                 });
@@ -310,24 +316,35 @@ $(document).ready(function() {
                     if (confirm("Do you want to play again?")) {
                         location.reload();
                     }
-                }, 4000);
+                }, 6000);
             }, 1000);
         }
     }
 
     // Check if Player Wins - optimized animations
-    function checkWin() {
-        if (matchedPairs === totalPairs) {
+   // Check if Player Wins - optimized animations with proper card fade
+function checkWin() {
+    if (matchedPairs === totalPairs) {
+        // Allow time for the last pair to show the matched animation and fade out
+        setTimeout(() => {
+            // Ensure all matched cards are faded properly
+            $(".matched").addClass("matched-card");
+        }, 500);
+
+        // Delay the confetti to start after cards have begun fading
+        setTimeout(() => {
             createConfetti();
+        }, 1200);
 
-            setTimeout(() => {
-                $card.css({ 
-                    transition: "opacity 0.5s ease", 
-                    opacity: "0", 
-                    visibility: "hidden" 
-                });
-            }, 500);
-
+        // Delay hiding all cards and showing win message
+        setTimeout(() => {
+            $card.css({ 
+                transition: "opacity 2.5s ease", 
+                opacity: "0", 
+                visibility: "hidden" 
+            });
+            
+            // Add delay before showing win message
             setTimeout(() => {
                 $winlose.addClass("visible");
                 
@@ -343,10 +360,11 @@ $(document).ready(function() {
                     if (confirm("Do you want to play again?")) {
                         location.reload();
                     }
-                }, 4000);
+                }, 6000);
             }, 500);
-        }
+        }, 2000); // Give more time to see the last matched pair fade out
     }
+}
 
     // Floating Particles - optimize by creating in batches
     const $particles = $('.particles');
