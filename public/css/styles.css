@@ -314,12 +314,12 @@ body {
 .container{
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 3 cards per row */
-  gap: clamp(20px, 4vw, 40px); /* Responsive gap */
+  gap: clamp(20px, 8vw, 60px); /* Responsive gap */
   justify-items: center;
   align-items: start;
   width: 100%;
   max-width: 800px; /* Prevent overflow on large screens */
-  margin: 20px auto 0;
+  margin: 10px auto 0;
   padding: 0 10px; /* Optional: horizontal padding for small devices */
   box-sizing: border-box;
 }
@@ -348,10 +348,22 @@ body {
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   /* styles for desktop screens */
   .card{
-    width: 150px;
+    width: 130px;
+  }
+  .container1{
+    margin: 7px auto 0;
+    gap: clamp(10px, 2vw, 40px);
+  }
+  .container{
+    margin: 7px auto 0;
+    gap: clamp(10px, 2vw, 40px);
+  }
+  .container2{
+    margin: 7px auto 0;
+    gap: clamp(10px, 2vw, 40px);
   }
 }
 /* Mobile: 2 cards per row */

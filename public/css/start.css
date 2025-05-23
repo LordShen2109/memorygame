@@ -250,8 +250,56 @@ body {
         transform: rotate(360deg);
     }
 }
-@media (min-width: 480px) and (max-width: 767px){}
-@media (min-width: 992px) and (max-width: 1199px){}
+@media(max-width: 1439px){
+    .letter{
+    font-size: 3rem;
+  }
+  .start-button{
+    height: 140px;
+    width: 140px;
+    margin-bottom: 0;
+  }
+  .difficulty-bar{
+    padding: 6px;
+  }
+  .instruction-text{
+    position: relative;
+    margin-top: 0;
+    bottom: 25px;
+  }
+  .title-word{
+    margin-bottom: 0;
+
+  }
+  .subtitle{
+    margin-top: 20px;
+  }
+}
+/* @media (min-width: 992px) and (max-width: 1199px){
+    .letter{
+    font-size: 3rem;
+  }
+  .start-button{
+    height: 140px;
+    width: 140px;
+    margin-bottom: 0;
+  }
+  .difficulty-bar{
+    padding: 6px;
+  }
+  .instruction-text{
+    position: relative;
+    margin-top: 0;
+    bottom: 25px;
+  }
+  .title-word{
+    margin-bottom: 0;
+
+  }
+  .subtitle{
+    margin-top: 20px;
+  }
+}
 @media (min-width: 1200px) and (max-width: 1439px){
   .letter{
     font-size: 3rem;
@@ -276,4 +324,4 @@ body {
   .subtitle{
     margin-top: 20px;
   }
-}
+} */
