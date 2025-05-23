@@ -346,11 +346,14 @@ function checkWin() {
             
             // Add delay before showing win message
             setTimeout(() => {
-                $winlose.addClass("visible");
+                $winlose.css({ 
+  opacity: "1", 
+  visibility: "visible" 
+});
                 
                 // Initialize Typed.js just once
                 new Typed('.typed', {
-                    strings: ["Congratulations! You Win!"],
+                    strings: [" Congratulations You Win!"],
                     typeSpeed: 60,
                     backSpeed: 60,
                     loop: false

@@ -101,21 +101,34 @@ body {
 }
 
 .winlose {
-  height: 200px;
-  width: 1000px;
-  text-align: center;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+
   visibility: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
-  /* letter-spacing: 4px; */
-  word-spacing: 20px;
-  left: 260px;
-  bottom: 230px;
-  font-size: 80px;
+  word-spacing: 0.3em;
+
+  font-size: 6vw; /* Responsive text size */
+  max-font-size: 80px;
   color: #764ba2;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  width: 90vw;
+  max-width: 1000px;
+  padding: 20px;
+  box-sizing: border-box;
 }
+
+
 
 .winlose.visible {
   visibility: visible;
@@ -365,19 +378,39 @@ body {
     margin: 7px auto 0;
     gap: clamp(10px, 2vw, 40px);
   }
+  /* .winlose{
+    bottom:280px;
+    left:180px;
+    font-size: 70px;
+  } */
 }
 /* Mobile: 2 cards per row */
 @media (max-width: 650px) {
-  .container1,.container {
+  .container1{
     grid-template-columns: repeat(2, 1fr);
+    margin: 7px auto 0;
+    gap: clamp(12px, 3vw, 40px);
     
   }
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(12px, 3vw, 40px);
+    padding: 16px;
+    margin: 0 auto;
+  }
+
   .container2{
     grid-template-columns: repeat(3, 1fr);
+    margin: 4px auto 0;
+    gap: clamp(12px, 2vw, 40px);
   }
   .card{
-    width: 100px;
+    width: 90px;
   }
+  .card h2{
+    font-size: clamp(1rem, 1vw, 1rem);
+  }
+  
 }
 
 
